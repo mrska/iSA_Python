@@ -29,6 +29,7 @@ tekst = "ala ma kota"
 len_tekst = len(tekst)
 print(tekst[len_tekst-1])
 
+print(0.1+0.2)
 
 # print("###########################################################################")
 
