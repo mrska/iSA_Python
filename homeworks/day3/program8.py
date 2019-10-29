@@ -1,3 +1,5 @@
+# Rysowanie piramidy o zadanej wysokości
+
 wysokoscPiramidy  = int(input("Podaj wysokość piramidy: "))
 
 for i in range(0, wysokoscPiramidy):
