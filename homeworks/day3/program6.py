@@ -29,6 +29,7 @@ linia = ("+" + "-" * szerokosc) * dlugoscListy + "+\n" + "|"
 for i in range(0, dlugoscListy):
     linia = linia + " " + lista[i] + liczbaSpacji[i] * " " + " |"
 
+linia = linia + "\n" + ("+" + "-" * szerokosc) * dlugoscListy + "+\n"
 print(linia)
 
 
