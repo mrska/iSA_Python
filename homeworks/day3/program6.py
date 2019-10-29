@@ -6,8 +6,9 @@ dlugoscListy = len(lista)
 
 # ustalenie maksymalnej szerokosc kolumny
 szerokosc = 1
+
+licznik = 0
 for i in lista:
-    licznik = 0
     if len(i) > 30:
         lista[licznik] = i[0:27] +  "..."
     licznik = licznik + 1
