@@ -2,21 +2,21 @@
 
 from homeworks.day4.homework4 import *
 
-
 menu = [["1", "Przeliczenie stopni Celsjusza na Fahrenheita i odwrotnie", celsius_fahrenheit],
         ["2", "Wyznaczenie pierwszej i ostatniej cyfry podanej liczby", edge_values],
         ["3", "Narysowanie prostokąta o zadanych wymiarach", draw_rectangle],
         ["4", "Przeliczenie liczby zapisanej w formacie binarnym na system dziesietny", binary_to_decimal],
         ["5", "Sprawdzenie, czy podany rok jest rokiem przestepnym", check_leap_year],
-        ["6", "Wyswietlanie listy w postaci tabeli"],
-        ["7", "Rozmienianie danej kwoty"],
-        ["8", "Rysowanie piramidy"],
-        ["9", "Wyliczanie wieku psa"],
-        ["10", "Formatowanie tekstu"],
-        ["R", "Wybierz program losowo"],
+        # ["6", "Wyswietlanie listy w postaci tabeli"],
+        # ["7", "Rozmienianie danej kwoty"],
+        # ["8", "Rysowanie piramidy"],
+        # ["9", "Wyliczanie wieku psa"],
+        # ["10", "Formatowanie tekstu"],
+        # ["R", "Wybierz program losowo"],
         ["Q", "Wyjscie"]
         ]
 
+print('Wybierz program:')
 for i in range(0, len(menu)):
     print(') '.join(menu[i][0:2]))
 
