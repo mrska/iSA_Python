@@ -52,17 +52,18 @@ def wyswietlKsiazke():
 
 def przeszukajKsiazke(szukaj):
     nrId = list()
+
     with open('book.pkl', 'rb') as book_file:
         data = pickle.load(book_file)
         for i in data:
             for key, value in enumerate(i):
                 if szukaj in i[value]:
                     nrId.append(i)
+                    break
     if(len(nrId)>0):
         print(nrId)
     else:
         print("Nie znaleziono")
-
 
 def sortujKsiazke(sortuj):
     sortujList = list()
