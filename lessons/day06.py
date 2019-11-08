@@ -71,7 +71,8 @@ def sortujKsiazke(sortuj):
     with open('book.pkl', 'rb') as book_file:
         data = pickle.load(book_file)
         for key, value in enumerate(data):
-            sortujList.append(value[sortuj])
+            if value[sortuj] not in sortujList:
+                sortujList.append(value[sortuj]) # dodajemy tylko unikalne wartosci, zeby potem nie zduplikowac wpisow
 
         posortowanaKsiazka = sorted(sortujList) # wyrzuci posortowany wynik
 
@@ -79,8 +80,6 @@ def sortujKsiazke(sortuj):
             for j in data:
                 if i == j[sortuj]:
                     print(j)
-# na razie dziala tylko jesli nie ma duplikatow w zmiennej po ktorej sortujemy, jesli sa duplikaty
-# to beda uzyte za kazdym razem
 
 onceAgain = 'T'
 while onceAgain == 'T':
@@ -103,7 +102,7 @@ while onceAgain == 'T':
         onceAgain = input('Czy jeszcze raz? [T/N]: ')
 
     elif mode == 'O': # order
-        sortuj = input('Po czym chcesz sortowac (poki co polecam tylko po date)): ')
+        sortuj = input('Po czym chcesz sortowac: ')
         sortujKsiazke(sortuj)
         onceAgain = input('Czy jeszcze raz? [T/N]: ')
 
