@@ -1,5 +1,6 @@
 # import csv
 #
+## Dopisanie nowej linijki do pliku csv
 # suma = 0
 #
 # with open('adresy.csv', 'r+', newline='') as csv_file:
@@ -13,10 +14,6 @@
 #     print(suma)
 #     csv_write = csv.writer(csv_file)
 #     csv_write.writerow(['Marta', 'Suska', 'Gdansk', '167181', '26'])
-#
-# # istnieja biblioteki ktora zamieniaja csvki na slowniki
-# # wtedy mozna sie odwolywac po nazwie, zalozenie ze pierwsza linijka zawiera nazwy kolumn
-
 
 # PICKLE
 import pickle
@@ -27,23 +24,16 @@ entries = [
     {"title": "Drugi wpis", "body": "Tresc druga", "author": "Tomek", "date": "08.11.2019"}
 ]
 
-
 def dodajDoKsiazki(tytul, tresc, imie, date):
 
     with open('book.pkl', 'rb+') as book_file:
-        # pickle.dump(entries, book_file)
         data = pickle.load(book_file)
-        #print(data)
 
         entry = {"title": tytul, "body": tresc, "author": imie, "date": date}
         data.append(entry)
 
-        book_file.seek(0)
+        book_file.seek(0) # jakbysmy chcieli znowu zaladowac plik to tez musimy to wywolac zeby ustawic sie na poczatku
         pickle.dump(data, book_file)
-
-        # book_file.seek(0)
-        # data = pickle.load(book_file)
-        # print(data)
 
 def wyswietlKsiazke():
     with open('book.pkl', 'rb') as book_file:
