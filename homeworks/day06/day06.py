@@ -136,7 +136,7 @@ while onceAgain == 'T':
         onceAgain = input('Czy chcesz cos jeszcze zrobic? [T/N]: ')
 
     elif mode == 'O': # order
-        sortuj = input('Po czym chcesz sortowac, podaj nazwe kolumny (np date, author): ')
+        sortuj = input('Po czym chcesz sortowac: ')
         kolejnosc = input('Rosnaca (asc) czy malejaco (desc)')
         sortujKsiazke(sortuj, kolejnosc)
         onceAgain = input('Czy chcesz cos jeszcze zrobic? [T/N]: ')
