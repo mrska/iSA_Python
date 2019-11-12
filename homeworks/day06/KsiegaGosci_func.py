@@ -1,21 +1,4 @@
-# import csv
-#
-## Dopisanie nowej linijki do pliku csv
-# suma = 0
-#
-# with open('adresy.csv', 'r+', newline='') as csv_file:
-#     csv_data = csv.reader(csv_file)
-#
-#     for row in csv_data:
-#         if row[4].isdigit():
-#             suma = suma + int(row[4])
-#         print(row)
-#
-#     print(suma)
-#     csv_write = csv.writer(csv_file)
-#     csv_write.writerow(['Marta', 'Suska', 'Gdansk', '167181', '26'])
-
-# PICKLE
+# Funkcje do zarzadzania na ksiega gosci
 import pickle
 import datetime
 import random
@@ -25,7 +8,8 @@ entries = [
     {"title": "Drugi wpis", "body": "Tresc druga", "author": "Tomek", "date": "08.11.2019"}
 ]
 
-def dodajDoKsiazki(tytul, tresc, imie, date):
+def dodajDoKsiazki(tytul, tresc, imie):
+    date = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 
     with open('book.pkl', 'rb+') as book_file:
         data = pickle.load(book_file)
@@ -112,60 +96,4 @@ def losujZKsiazki():
         data = pickle.load(book_file)
         id = random.randint(0, len(data)-1)
         print(data[id])
-
-onceAgain = 'T'
-while onceAgain == 'T':
-
-    mode = input('Co chcesz zrobic? \ndodac(A), \nwyszukac (S), \nposortowac (O),'
-                 ' \nwyswietlic kolejne wpisy (D), \nwyswietlic losowy wpis (R),'
-                 '\nwyjsc (X)\n->')
-    if mode == 'S': # search
-        szukaj = input("Co chcesz wyszukac? ")
-        przeszukajKsiazke(szukaj)
-        onceAgain = input('Czy chcesz cos jeszcze zrobic? [T/N]: ')
-
-    elif mode == 'A': # add
-
-        tytul = input('Podaj tytul: ')
-        tresc = input('Podaj tresc:  ')
-        imie = input('Podaj imie: ')
-        date = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-
-        dodajDoKsiazki(tytul, tresc, imie, date)
-        wyswietlKsiazke()
-        onceAgain = input('Czy chcesz cos jeszcze zrobic? [T/N]: ')
-
-    elif mode == 'O': # order
-        sortuj = input('Po czym chcesz sortowac. Podaj nazwe kolumny (np date, author): ')
-        kolejnosc = input('Rosnaca (asc) czy malejaco (desc)')
-        sortujKsiazke(sortuj, kolejnosc)
-        onceAgain = input('Czy chcesz cos jeszcze zrobic? [T/N]: ')
-
-    elif mode == 'D': #display
-        przegladajKsiazke()
-        onceAgain = input('Czy chcesz cos jeszcze zrobic? [T/N]: ')
-
-    elif mode == 'R': # random
-        losujZKsiazki()
-        onceAgain = input('Czy chcesz cos jeszcze zrobic? [T/N]: ')
-
-    elif mode == 'X':
-        print('Do zobaczenia')
-        onceAgain = 'N'
-
-    else:
-        print('Nie wiem co chcesz zrobic')
-        onceAgain = 'T'
-
-
-# POWROT DO WYJSCIOWYCH DANYCH
-# import pickle
-#
-# entries = [
-#     {"title": "Pierwszy wpis", "body": "Tresc pierwsza", "author": "Marta", "date": "07.11.2019"},
-#     {"title": "Drugi wpis", "body": "Tresc druga", "author": "Tomek", "date": "08.11.2019"}
-# ]
-# with open('book.pkl', 'wb') as book_file:
-#     pickle.dump(entries, book_file)
-
 
