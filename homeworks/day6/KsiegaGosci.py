@@ -53,5 +53,5 @@ while onceAgain == 'T':
 #     {"title": "Pierwszy wpis", "body": "Tresc pierwsza", "author": "Marta", "date": "07.11.2019"},
 #     {"title": "Drugi wpis", "body": "Tresc druga", "author": "Tomek", "date": "08.11.2019"}
 # ]
-# with open('book.pkl', 'wb') as book_file:
+# with open(r'..\..\lessons\book.pkl', 'wb') as book_file:
 #     pickle.dump(entries, book_file)
