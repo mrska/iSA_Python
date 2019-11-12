@@ -1,6 +1,6 @@
 # Zarzadzanie ksiega gosci
 
-from homeworks.day06.KsiegaGosci_func import *
+from homeworks.day6.KsiegaGosci_func import *
 
 onceAgain = 'T'
 while onceAgain == 'T':
