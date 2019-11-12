@@ -3,6 +3,8 @@ import pickle
 import datetime
 import random
 
+Ksiega = r'..\..\lessons\book.pkl'
+
 entries = [
     {"title": "Pierwszy wpis", "body": "Tresc pierwsza", "author": "Marta", "date": "07.11.2019"},
     {"title": "Drugi wpis", "body": "Tresc druga", "author": "Tomek", "date": "08.11.2019"}
@@ -11,7 +13,7 @@ entries = [
 def dodajDoKsiazki(tytul, tresc, imie):
     date = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 
-    with open('book.pkl', 'rb+') as book_file:
+    with open(Ksiega, 'rb+') as book_file:
         data = pickle.load(book_file)
 
         entry = {"title": tytul, "body": tresc, "author": imie, "date": date}
@@ -21,14 +23,14 @@ def dodajDoKsiazki(tytul, tresc, imie):
         pickle.dump(data, book_file)
 
 def wyswietlKsiazke():
-    with open('book.pkl', 'rb') as book_file:
+    with open(Ksiega, 'rb') as book_file:
         data = pickle.load(book_file)
         print(data)
 
 def przeszukajKsiazke(szukaj):
     nrId = list()
 
-    with open('book.pkl', 'rb') as book_file:
+    with open(Ksiega, 'rb') as book_file:
         data = pickle.load(book_file)
         for i in data:
             for key, value in enumerate(i):
@@ -47,7 +49,7 @@ def sortujKsiazke(sortuj, kolejnosc):
         print('Niepoprawnie zdefiniowana kolejnosc. Wpisz asc lub desc ')
     else:
 
-        with open('book.pkl', 'rb') as book_file:
+        with open(Ksiega, 'rb') as book_file:
             data = pickle.load(book_file)
             for key, value in enumerate(data):
                 if value[sortuj] not in sortujList:
@@ -64,7 +66,7 @@ def sortujKsiazke(sortuj, kolejnosc):
                         print(j)
 
 def przegladajKsiazke():
-    with open('book.pkl', 'rb') as book_file:
+    with open(Ksiega, 'rb') as book_file:
         data = pickle.load(book_file)
         licznik = 0
         print(data[licznik])
@@ -92,7 +94,7 @@ def przegladajKsiazke():
                 print('Niezdefiniownana operacja')
 
 def losujZKsiazki():
-    with open('book.pkl', 'rb') as book_file:
+    with open(Ksiega, 'rb') as book_file:
         data = pickle.load(book_file)
         id = random.randint(0, len(data)-1)
         print(data[id])
