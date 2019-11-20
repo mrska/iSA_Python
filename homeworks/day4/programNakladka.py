@@ -1,6 +1,11 @@
 # PROGRAM NAKLADKA
 
-from homeworks.day4.homework4 import *
+from homeworks.day3.multirun import *
+from homeworks.day3.celsius_fahrenheit import *
+from homeworks.day3.edge_values import *
+from homeworks.day3.draw_rectangle import *
+from homeworks.day3.binary_to_decimal import *
+from homeworks.day3.check_leap_year import *
 
 menu = [["1", "Przeliczenie stopni Celsjusza na Fahrenheita i odwrotnie", celsius_fahrenheit],
         ["2", "Wyznaczenie pierwszej i ostatniej cyfry podanej liczby", edge_values],
