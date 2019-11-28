@@ -106,5 +106,10 @@ class Ksiega():
             id = random.randint(0, len(data) - 1)
             print(data[id])
 
-#NowyWpis = Wpis('tescik', 'tres2', 'MS').utworz_wpis()
-Ksiega().przegladajKsiazke()
+# NowyWpis = Wpis('tescik', 'tres2', 'MS').utworz_wpis()
+# Ksiega.dodajDoKsiazki(NowyWpis)
+# Ksiega().wyswietlKsiazke()
+# Ksiega().przegladajKsiazke()
+# Ksiega().losujZKsiazki()
+# Ksiega().przeszukajKsiazke('Marta')
+# Ksiega().sortujKsiazke('author', 'desc')
