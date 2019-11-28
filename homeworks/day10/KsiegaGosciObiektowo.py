@@ -113,3 +113,5 @@ class Ksiega():
 # Ksiega().losujZKsiazki()
 # Ksiega().przeszukajKsiazke('Marta')
 # Ksiega().sortujKsiazke('author', 'desc')
+
+# Czy te funkcje powinny byc zdefiniowane wewnatrz czy moge byc na zewnatrz i odwolanie do nich?
