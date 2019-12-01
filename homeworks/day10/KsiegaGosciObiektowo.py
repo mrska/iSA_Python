@@ -107,7 +107,7 @@ class Ksiega():
             print(data[id])
 
 # NowyWpis = Wpis('tescik', 'tres2', 'MS').utworz_wpis()
-# Ksiega.dodajDoKsiazki(NowyWpis)
+# Ksiega().dodajDoKsiazki(NowyWpis)
 # Ksiega().wyswietlKsiazke()
 # Ksiega().przegladajKsiazke()
 # Ksiega().losujZKsiazki()
